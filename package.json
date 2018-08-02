@@ -1,0 +1,26 @@
+{
+  "name": "mySQLnodeStore",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bamazoncustomer.js",
+  "dependencies": {
+    "inquirer": "^6.0.0",
+    "mysql": "^2.16.0",
+    "table": "^4.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bburch05/mySQLnodeStore.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bburch05/mySQLnodeStore/issues"
+  },
+  "homepage": "https://github.com/Bburch05/mySQLnodeStore#readme"
+}
