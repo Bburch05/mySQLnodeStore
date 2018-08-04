@@ -4,6 +4,7 @@
   "description": "",
   "main": "bamazoncustomer.js",
   "dependencies": {
+    "commonjs": "0.0.1",
     "inquirer": "^6.0.0",
     "mysql": "^2.16.0",
     "table": "^4.0.3"
