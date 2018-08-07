@@ -16,7 +16,7 @@ Afterwards, it prompts the user to pick an item's ID from the table to purchase,
 ## EXAMPLE : 
 ![CLI screenshot](examples/bamazonCustomer.gif)
 
-#bamazonManager.js
+# bamazonManager.js
 
 bamazonManager mocks the Manager side of the Store.
 
