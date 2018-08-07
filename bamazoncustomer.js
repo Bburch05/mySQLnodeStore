@@ -10,7 +10,7 @@ var connection = mysql.createConnection({
     database: "bamazon_db"
   });
   
-var tableData = [["Item Id","Product","Department","# Left", "Price ($)"]]
+
 var buyID
 
 function displayTable(){
@@ -28,14 +28,27 @@ function displayTable(){
 
 function bamazonMenu(){
     // running this application will first display all of the items available for sale. Include the ids, names, and prices of products for sale.
+    var tableData = [["Item Id","Product","Department","# Left", "Price ($)"]];
+
      // The first should ask them the ID of the product they would like to buy.  
+     connection.query("SELECT * FROM products",function(err,res){
+        if (err) throw err;
+    var itemIDs = [];
+    for (var i = 0; i < res.length; i++){
+        var newArray = [res[i].id,res[i].item,res[i].department,res[i].qty,res[i].price];
+        tableData.push(newArray);
+        itemIDs.push(res[i].id)
+    }
+    console.log("\n"+table(tableData));
+
+    
     inquirer.prompt([
         {
             name: "buyId",
             message:"Please enter the ID of the item that you would like to buy.",
             type: "input",
             validate : function(input){
-                if (!isNaN(parseInt(input))){
+                if (!isNaN(parseInt(input)) && itemIDs.includes(parseInt(input))){
                     return true
                 }
                 console.log("\nPlease enter a valid number")
@@ -45,7 +58,7 @@ function bamazonMenu(){
         buyID = user.buyId
         buyItem();
     });
-
+    });
     };
     
     
@@ -105,7 +118,4 @@ function bamazonMenu(){
     // if your store _does_ have enough of the product, you should fulfill the customer's order.
     // Once the update goes through, show the customer the total cost of their purchase.
     
-
-
-displayTable();
 bamazonMenu();
